@@ -36,12 +36,28 @@ GPIO_ECHO    = 24
 servo        = 18
 print("Ultrasonic Measurement")
 
-from__future__import print_function
-import time
-import RPi.GPIO as GPIO
+GPIO.setup(servo,GPIO.OUT)
+GPIO.setup(GPIO_TRIGGER,GPIO.OUT)
+GPIO.setup(GPIO_ECHO,GPIO.IN)
 
-def measure() :
-   GPIO.output(GPIO_TRIGGER, True)
-   time.sleep(0.00001)
-   GPIO.output(GPIO_TRIGGER, False)
-   start = time.time()
+GPIO.output(GPIO_TRIGGER, False)
+
+p=GPIO.PWM(servo, 50)
+p.start(2.5)
+try: 
+
+  while True:
+  
+    distane = measure_average()
+    print("Distance : %.1f" % distance
+    time. sleep(1)
+    
+    if distance <=10:
+    print("angle: 1")
+    p. ChangeDutyCycle(2.5)
+    else :
+    print("angle: 5")
+    p. ChangeDutyCycle(7.5)
+    
+except KeyboardInterrupt:
+  GPIO.cleanup()
