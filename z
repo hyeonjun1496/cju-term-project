@@ -1,0 +1,87 @@
+from __futer__ import print_function                              
+import RPi.GPIO as GPIO 
+import time
+
+def measure():
+    GPIO.output(GPIO_TRIGGER, True)
+    time.sleep(0.0001)
+    GPIO.output(GPIO_TRIGGER, False)
+    start = time.time()
+    
+    while GPIO.input(GPIO_ECHO)==0:
+        start = time.time()
+        
+    while GPIO.input(GPIO_ECHO)==1:
+        stop time.time() 
+        
+    elapsed = stop-start
+    distance = (elapsed * 34300)/2
+    
+    return distance
+    
+def measure_average():
+    distance1=measure()
+    time.sleep(0.1)
+    distance2=measure()
+    time.sleep(0.1)
+    distance3=measure()
+    distance = distance1 + distance2 + distance3
+    distance = distance / 3
+    return distance
+    
+GPIO_setmode(GPIO.BCM)
+
+GPIO_TRIGGER = 23
+GPIO_ECHO    = 24
+servo        = 18
+print("Ultrasonic Measurement")
+
+GPIO.setup(servo,GPIO.OUT)
+GPIO.setup(GPIO_TRIGGER,GPIO.OUT)
+GPIO.setup(GPIO_ECHO,GPIO.IN)
+
+GPIO.output(GPIO_TRIGGER, False)
+
+p=GPIO.PWM(servo, 50)
+p.start(2.5)
+try: 
+
+
+    while True
+    
+        distance  = measure_average()
+        print("Distance : %.1f" % distance)
+        time.sleep(1)
+        
+        if distance >=10 and distance <= 20:
+        print("angle: 1")
+        p.ChangedutyCycle(2.5)
+          distance >20 and distance <= 30:
+        print("angle: 2")
+        p.ChangedutyCycle(3) 
+          distance >30 and distance <= 40:        
+        print("angle: 3")
+        p.ChangedutyCycle(3.5)
+          distance >40 and distance <= 50:
+        print("angle: 4")
+        p.ChangedutyCycle(4)
+          distance >50 and distance <= 60:
+        print("angle: 5")
+        p.ChangedutyCycle(4.5)
+          distance >60 and distance <= 70:
+        print("angle: 6")
+        p.ChangedutyCycle(5)
+          distance >70 and distance <= 80:
+        print("angle: 7")
+        p.ChangedutyCycle(5.5)
+          distance >80 and distance <= 90:
+        print("angle: 8")
+        p.ChangedutyCycle(6)
+          distance >90 and distance <= 100:
+        print("angle: 9")
+        p.ChangedutyCycle(6.5)
+        
+        else :GPIO.cleanup()
+        
+
+except keyboardinterrupt:
