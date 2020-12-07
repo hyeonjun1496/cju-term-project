@@ -55,33 +55,28 @@ try:
         
         if distance >=10 and distance <= 20:  //만약 거리가 10보다 크고 20 보다 작을경우
            print("angle: 1")                     //각도1을 프린트 
-           p.ChangedutyCycle(2.5)                //듀티사이클이 2.5% 일경우 
+           p.ChangedutyCycle(3)                //듀티사이클이 2.5% 일경우 
         elif distance >20 and distance <= 30:   
            print("angle: 2")                      
-           p.ChangedutyCycle(3)                  //듀티사이클 3%로 변경
+           p.ChangedutyCycle(4)                  //듀티사이클 3%로 변경
         elif distance >30 and distance <= 40:        
           print("angle: 3")
-          p.ChangedutyCycle(3.5)
+          p.ChangedutyCycle(5)
         elif distance >40 and distance <= 50:
           print("angle: 4")
-          p.ChangedutyCycle(4)
+          p.ChangedutyCycle(6)
         elif distance >50 and distance <= 60:
           print("angle: 5")
-          p.ChangedutyCycle(4.5)
+          p.ChangedutyCycle(7)
         elif distance >60 and distance <= 70:
           print("angle: 6")
-          p.ChangedutyCycle(5)
+          p.ChangedutyCycle(8)
         elif distance >70 and distance <= 80:
           print("angle: 7")
-          p.ChangedutyCycle(5.5)
+          p.ChangedutyCycle(9)
         elif distance >80 and distance <= 90:
           print("angle: 8")
-          p.ChangedutyCycle(6)
-        elif distance >90 and distance <= 100:
-          print("angle: 9")
-          p.ChangedutyCycle(6.5)
-        
-        else :GPIO.cleanup()
+          p.ChangedutyCycle(10)
         
 
 except keyboardinterrupt:
