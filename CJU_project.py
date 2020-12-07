@@ -31,7 +31,7 @@ def measure_average():
     
 GPIO_setmode(GPIO.BCM)
 
-GPIO_TRIGGER = 23                      #                      
+GPIO_TRIGGER = 23                                            
 GPIO_ECHO    = 24
 servo        = 18
 print("Ultrasonic Measurement")
@@ -55,10 +55,10 @@ try:
         
         if distance >=10 and distance <= 20:  //만약 거리가 10보다 크고 20 보다 작을경우
            print("angle: 1")                     //각도1을 프린트 
-           p.ChangedutyCycle(3)                //듀티사이클이 2.5% 일경우 
+           p.ChangedutyCycle(3)                //듀티사이클이 3% 일경우 
         elif distance >20 and distance <= 30:   
            print("angle: 2")                      
-           p.ChangedutyCycle(4)                  //듀티사이클 3%로 변경
+           p.ChangedutyCycle(4)                  //듀티사이클 4%로 변경
         elif distance >30 and distance <= 40:        
           print("angle: 3")
           p.ChangedutyCycle(5)
