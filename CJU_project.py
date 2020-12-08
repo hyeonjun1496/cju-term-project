@@ -2,7 +2,7 @@ from __futer__ import print_function
 import RPi.GPIO as GPIO   #서브 모터 제어에 사용할 RIP.GPIO 모듈을 임포트함 
 import time               #시간 함수 임포트함
 
-def measure():
+def measure():                          #거리측정
     GPIO.output(GPIO_TRIGGER, True)     #  초음파 GPIO 출력 
     time.sleep(0.0001)                  #  0.0001초 동안 초음파 측정
     GPIO.output(GPIO_TRIGGER, False)    
